@@ -1,0 +1,75 @@
+<html>
+<head>
+    <title> ToDo App </title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100"     rel="stylesheet">
+    <link href="/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+<link href="styles.css" rel="stylesheet">
+
+  </head>
+<body>
+  <div class="container">
+<h2> A Simple ToDo List App </h2>
+<form action ="/addtask" method="POST">
+       <input type="text" name="newtask" placeholder="add new task">        <button> Add Task </button>
+       <h2> Added Task </h2>
+       <% for( var i = 0; i < task.length; i++){ %>
+    <li><input type="checkbox" name="check" value="<%= task[i] %>" /> <%= task[i] %> </li>
+    <% } %>
+<button formaction="/removetask" type="submit"> Remove </button>
+</form>
+<h2> Completed task </h2>
+
+<% for(var i = 0; i < complete.length; i++){ %>
+  <li><input type="checkbox" checked><%= complete[i] %> </li>
+<% } %>
+</div>
+<style>
+  body {
+  font-family: 'Lato', sans-serif;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  font-weight: bold; /* Changed font weight to bold */
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 5px;
+  width: 200px;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+input[type="checkbox"] {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+</style>
+</body>
+</html>
